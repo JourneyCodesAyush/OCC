@@ -1,0 +1,34 @@
+import argparse
+import random
+from pathlib import Path
+
+from occ.config import EXTENSIONS, FILES, SUCCESSES, WARNINGS
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(
+        description="The Optimistic Compiler Collection — because every program deserves to succeed"
+    )
+
+    parser.add_argument("path", nargs="?", default="", help="Source file to compile")
+    parser.add_argument("--verbose", action="store_true", help="Show verbose output")
+
+    args = parser.parse_args()
+
+    messages: list[str] = []
+
+    if args.path == "":
+        messages = FILES["VOID"]
+    else:
+        suffix: str = Path(args.path).suffix
+        ext = EXTENSIONS.get(suffix, "UNKNOWN")
+        messages = FILES.get(ext, FILES["UNKNOWN"])
+
+    for message in messages:
+        print(message)
+
+    print(random.choice(SUCCESSES))
+
+
+if __name__ == "__main__":
+    main()
