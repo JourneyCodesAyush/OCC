@@ -16,7 +16,7 @@ def main() -> None:
 
     args = parser.parse_args()
 
-    messages: list[str] = []
+    messages: list[tuple[str, str]] = []
 
     if args.path == "":
         messages = FILES["VOID"]
@@ -25,8 +25,8 @@ def main() -> None:
         ext = EXTENSIONS.get(suffix, "UNKNOWN")
         messages = FILES.get(ext, FILES["UNKNOWN"])
 
-    for message in messages:
-        print(message)
+    for label, message in messages:
+        print(f"{label:<14} {message}")
         time.sleep(random.uniform(0.1, 0.6))
 
     print(random.choice(SUCCESSES))
