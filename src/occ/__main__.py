@@ -1,8 +1,9 @@
 import argparse
 import random
+import time
 from pathlib import Path
 
-from occ.config import EXTENSIONS, FILES, SUCCESSES, WARNINGS
+from occ.config import EXTENSIONS, FILES, SUCCESSES
 
 
 def main() -> None:
@@ -26,6 +27,7 @@ def main() -> None:
 
     for message in messages:
         print(message)
+        time.sleep(random.uniform(0.1, 0.6))
 
     print(random.choice(SUCCESSES))
 
