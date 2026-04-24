@@ -1,1 +1,4 @@
 * text=auto eol=lf
+
+# Treat image files in assets/ as binary
+assets/*.{png,jpg,jpeg} binary
