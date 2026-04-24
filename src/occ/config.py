@@ -11,6 +11,8 @@ EXTENSIONS: dict[str, str] = {
     ".pdf": "PDF",
 }
 
+LABELS: list[str] = ["[WARN]", "[NOTICE]", "[ERROR]"]
+
 WARNINGS: list[str] = [
     "Variable type unknown... Inferred from gut feeling",
     "Errors found in source code... Classifying as creative decisions",
