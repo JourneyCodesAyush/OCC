@@ -3,7 +3,7 @@ import random
 import time
 from pathlib import Path
 
-from occ.config import EXTENSIONS, FILES, SUCCESSES
+from occ.config import EXTENSIONS, FILES, LABELS, SUCCESSES, WARNINGS
 
 
 def main() -> None:
@@ -12,7 +12,11 @@ def main() -> None:
     )
 
     parser.add_argument("path", nargs="?", default="", help="Source file to compile")
-    parser.add_argument("--verbose", action="store_true", help="Show verbose output")
+    parser.add_argument(
+        "--Wall",
+        action="store_true",
+        help="Show all warnings",
+    )
 
     args = parser.parse_args()
 
@@ -24,6 +28,16 @@ def main() -> None:
         suffix: str = Path(args.path).suffix
         ext = EXTENSIONS.get(suffix, "UNKNOWN")
         messages = FILES.get(ext, FILES["UNKNOWN"])
+
+    warning_index = random.randint(1, len(messages) - 1)
+    messages.insert(warning_index, (random.choice(LABELS), random.choice(WARNINGS)))
+
+    if args.Wall:
+        for _ in range(random.randint(1, 4)):
+            warning_index = random.randint(1, len(messages) - 1)
+            messages.insert(
+                warning_index, (random.choice(LABELS), random.choice(WARNINGS))
+            )
 
     for label, message in messages:
         print(f"{label:<14} {message}")
