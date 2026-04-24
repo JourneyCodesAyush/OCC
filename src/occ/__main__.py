@@ -1,15 +1,26 @@
 import argparse
 import random
+import sys
 import time
+from importlib.metadata import version
 from pathlib import Path
 
 from occ.config import EXTENSIONS, FILES, LABELS, SUCCESSES, WARNINGS
 
 
 def main() -> None:
+
+    # This workaround because using argparse to add a new argument requires a positional argument to be passed
+    # Something like 'occ -v <something>' for version to be displayed
+    if len(sys.argv) == 2:
+        if sys.argv[1] == "-v" or sys.argv[1] == "--version":
+            print(f"occ v{version('occ')} (optimistic)")
+            return
+
     parser = argparse.ArgumentParser(
         description="The Optimistic Compiler Collection — because every program deserves to succeed"
     )
+    parser.add_argument("-v", "--version", help="Display version")
 
     parser.add_argument("path", nargs="?", default="", help="Source file to compile")
     parser.add_argument(
