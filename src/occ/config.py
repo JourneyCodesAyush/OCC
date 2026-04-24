@@ -1,4 +1,5 @@
 EXTENSIONS: dict[str, str] = {
+    ".c": "CPP",
     ".cpp": "CPP",
     ".cxx": "CPP",
     ".hpp": "CPP",
