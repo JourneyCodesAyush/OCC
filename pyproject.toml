@@ -9,7 +9,7 @@ requires-python = ">=3.14"
 dependencies = []
 
 [project.scripts]
-occ = "occ:main"
+occ = "occ.__main__:main"
 
 [build-system]
 requires = ["uv_build>=0.11.3,<0.12.0"]
