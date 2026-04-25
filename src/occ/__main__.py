@@ -24,7 +24,7 @@ def main() -> None:
 
     parser.add_argument("path", nargs="?", default="", help="Source file to compile")
     parser.add_argument(
-        "--Wall",
+        "-Wall",
         action="store_true",
         help="Show all warnings",
     )
