@@ -1,6 +1,6 @@
 [project]
 name = "occ"
-version = "0.1.0"
+version = "0.1.1"
 description = "The Optimistic Compiler Collection — because every program deserves to succeed"
 authors = [
     { name = "JourneyCodesAyush", email = "journeycodes.ayush@gmail.com" }

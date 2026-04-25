@@ -21,7 +21,7 @@ without exception.
 - **100% build success rate** - guaranteed, by design
 - **Intelligent error resolution** - errors are not ignored, they are _resolved_
 - **Zero configuration** - OCC knows what your code means, even if you don't
-- **`--Wall` support** - all warnings shown, all warnings handled
+- **`-Wall` support** - all warnings shown, all warnings handled
 
 ---
 
@@ -52,7 +52,7 @@ occ                  # compiles the void. successfully.
 
 | Flag             | Description                                                |
 | ---------------- | ---------------------------------------------------------- |
-| `--Wall`         | Show all diagnostic warnings (all resolved optimistically) |
+| `-Wall`          | Show all diagnostic warnings (all resolved optimistically) |
 | `-v`/`--version` | Display version information                                |
 
 ---
