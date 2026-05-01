@@ -5,6 +5,7 @@ import time
 from importlib.metadata import version
 from pathlib import Path
 
+from occ.colors import Color, get_color
 from occ.config import EXTENSIONS, FILES, LABELS, SUCCESSES, WARNINGS
 
 
@@ -51,10 +52,11 @@ def main() -> None:
             )
 
     for label, message in messages:
-        print(f"{label:<14} {message}")
+        color = get_color(label)
+        print(f"{color}{label:<14} {message}{Color.RESET}")
         time.sleep(random.uniform(0.1, 0.6))
 
-    print(random.choice(SUCCESSES))
+    print(f"{Color.GREEN}{random.choice(SUCCESSES)}{Color.RESET}")
 
 
 if __name__ == "__main__":
