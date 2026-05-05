@@ -22,6 +22,7 @@ without exception.
 - **Intelligent error resolution** - errors are not ignored, they are _resolved_
 - **Zero configuration** - OCC knows what your code means, even if you don't
 - **`-Wall` support** - all warnings shown, all warnings handled
+- **Color-coded diagnostics** - errors in red, warnings in yellow, success in green
 
 ---
 
@@ -75,8 +76,8 @@ to ensure the pipeline always reaches stage 6.
 
 ## Diagnostic System
 
-OCC features a sophisticated diagnostic engine. When anomalies are detected,
-they are logged, categorized, and resolved - without burdening the developer.
+OCC features a sophisticated diagnostic engine with color-coded output.
+When anomalies are detected, they are logged, categorized, and resolved - without burdening the developer.
 
 ```
 [WARN]   Null pointer detected... Pointer has been emotionally supported
@@ -90,13 +91,13 @@ All diagnostics resolve to `exit code 0`.
 
 ## Metrics
 
-| Metric             | Value                    |
-| ------------------ | ------------------------ |
-| Build Success Rate | 100%                     |
-| Error Rate         | 0% (handled proactively) |
-| Confidence Score   | 1.00                     |
-| Undefined Behavior | Defined as success       |
-| Warnings           | Promoted to features     |
+| Metric             | Value                                            |
+| ------------------ | ------------------------------------------------ |
+| Build Success Rate | 100%                                             |
+| Error Rate         | 0% (handled proactively)                         |
+| Confidence Score   | 1.00                                             |
+| Undefined Behavior | Defined as success                               |
+| Warnings           | 30 distinct conditions, all promoted to features |
 
 ---
 
