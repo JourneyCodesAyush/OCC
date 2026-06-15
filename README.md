@@ -23,6 +23,7 @@ without exception.
 - **Zero configuration** - OCC knows what your code means, even if you don't
 - **`-Wall` support** - all warnings shown, all warnings handled
 - **Color-coded diagnostics** - errors in red, warnings in yellow, success in green
+- **Universal language support** - C/C++, Java, Python, Rust, Go, TypeScript, Zig, Lua, Ruby, data formats, media files, executables, and more
 
 ---
 
@@ -103,15 +104,26 @@ All diagnostics resolve to `exit code 0`.
 
 ## Supported File Types
 
-| Extension                       | Language / Format          |
-| ------------------------------- | -------------------------- |
-| `.c`,`.cpp` ,`.cxx`,`.hpp`      | C/C++                      |
-| `.py`                           | Python                     |
-| `.java`                         | Java                       |
-| `.jpg`, `.jpeg`, `.png`, `.img` | Images                     |
-| `.pdf`                          | PDF                        |
-| _(anything else)_               | Compiled on vibes          |
-| _(nothing)_                     | Void compiled successfully |
+| Extension                                 | Language / Format          |
+| ----------------------------------------- | -------------------------- |
+| `.c`, `.cpp`, `.cxx`, `.hpp`              | C/C++                      |
+| `.py`                                     | Python                     |
+| `.java`                                   | Java                       |
+| `.rs`                                     | Rust                       |
+| `.go`                                     | Go                         |
+| `.ts`                                     | TypeScript                 |
+| `.zig`                                    | Zig                        |
+| `.lua`                                    | Lua                        |
+| `.rb`                                     | Ruby                       |
+| `.jpg`, `.jpeg`, `.png`, `.img`           | Images                     |
+| `.pdf`                                    | PDF                        |
+| `.json`, `.yaml`, `.yml`, `.toml`, `.xml` | Data / Config              |
+| `.txt`, `.md`                             | Plaintext / Markdown       |
+| `.mp3`, `.mp4`                            | Media                      |
+| `.zip`                                    | Archive                    |
+| `.exe`                                    | Executable                 |
+| _(anything else)_                         | Compiled on vibes          |
+| _(nothing)_                               | Void compiled successfully |
 
 ---
 
