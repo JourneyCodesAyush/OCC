@@ -50,11 +50,11 @@ def main() -> None:
     messages: list[tuple[str, str]] = []
 
     if args.path == "":
-        messages = FILES["VOID"]
+        messages = list(FILES["VOID"])
     else:
         suffix: str = Path(args.path).suffix
         ext = EXTENSIONS.get(suffix, "UNKNOWN")
-        messages = FILES.get(ext, FILES["UNKNOWN"])
+        messages = list(FILES.get(ext, FILES["UNKNOWN"]))
 
     warning_index = random.randint(1, len(messages) - 1)
     messages.insert(warning_index, (random.choice(LABELS), random.choice(WARNINGS)))
