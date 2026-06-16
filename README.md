@@ -88,10 +88,11 @@ to ensure the pipeline always reaches stage 6.
 
 ## Diagnostic System
 
-OCC features a sophisticated diagnostic engine with color-coded output.
+OCC features a sophisticated diagnostic engine with color-coded output and live progress indication.
 When anomalies are detected, they are logged, categorized, and resolved - without burdening the developer.
 
 ```
+⠹ compiling...
 [WARN]   Null pointer detected... Pointer has been emotionally supported
 [ERROR]  Segmentation fault imminent... Segment has been reassured
 [NOTICE] Undefined behavior encountered... Behavior has been defined (you're welcome)
@@ -149,7 +150,7 @@ This is not a bug. This is a feature.
 
 ## Mascot
 
-OCC's official mascot is a pigeon.
+OCC's official mascot is a pigeon. It adapts to your color scheme, because even pride should be theme-aware.
 
 The pigeon does not doubt. The pigeon does not fail.
 The pigeon compiled your JPEG and is proud of it.
