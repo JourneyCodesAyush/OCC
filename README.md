@@ -47,15 +47,22 @@ uv run python -m occ <path-to-file>
 occ main.cpp
 occ sketch.png
 occ thesis.pdf
-occ                  # compiles the void. successfully.
+occ                          # compiles the void. successfully.
+occ main.cpp --strict        # higher standards. still successful.
+occ main.cpp --target arm64  # cross-compiles emotionally
+occ main.cpp -O3 --quiet     # fast and silent. trust the process.
 ```
 
 ### Flags
 
-| Flag             | Description                                                |
-| ---------------- | ---------------------------------------------------------- |
-| `-Wall`          | Show all diagnostic warnings (all resolved optimistically) |
-| `-v`/`--version` | Display version information                                |
+| Flag              | Description                                                               |
+| ----------------- | ------------------------------------------------------------------------- |
+| `-Wall`           | Show all diagnostic warnings (all resolved optimistically)                |
+| `--strict`        | Enable strict mode — standards have never been higher, all standards met  |
+| `--quiet`         | Suppress pipeline output, jump straight to success                        |
+| `-O3`             | Aggressively optimize (vibes only, no measurable effect)                  |
+| `--target <arch>` | Compile for any architecture you name. Architecture is a social construct |
+| `-v`/`--version`  | Display version information                                               |
 
 ---
 
