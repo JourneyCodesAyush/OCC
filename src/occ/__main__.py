@@ -6,7 +6,13 @@ from importlib.metadata import version
 from pathlib import Path
 
 from occ.colors import Color, get_color
-from occ.config import EXTENSIONS, FILES, LABELS, SUCCESSES, WARNINGS
+from occ.config import (
+    EXTENSIONS,
+    FILES,
+    LABELS,
+    SUCCESSES,
+    WARNINGS,
+)
 
 
 def main() -> None:
@@ -23,11 +29,15 @@ def main() -> None:
     )
 
     parser.add_argument("path", nargs="?", default="", help="Source file to compile")
+    parser.add_argument("-Wall", action="store_true", help="Show all warnings")
     parser.add_argument(
-        "-Wall",
-        action="store_true",
-        help="Show all warnings",
+        "--strict", action="store_true", help="Enable strict mode (all standards met)"
     )
+    parser.add_argument("--quiet", action="store_true", help="Suppress pipeline output")
+    parser.add_argument(
+        "-O3", action="store_true", help="Aggressively optimize (vibes only)"
+    )
+    parser.add_argument("--target", nargs="?", default="", help="Target architecture")
 
     args = parser.parse_args()
 
