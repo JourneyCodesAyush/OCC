@@ -21,7 +21,6 @@ def main() -> None:
     parser = argparse.ArgumentParser(
         description="The Optimistic Compiler Collection — because every program deserves to succeed"
     )
-    parser.add_argument("-v", "--version", help="Display version")
 
     parser.add_argument("path", nargs="?", default="", help="Source file to compile")
     parser.add_argument(
