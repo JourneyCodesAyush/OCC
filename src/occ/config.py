@@ -64,6 +64,55 @@ WARNINGS: list[str] = [
     "NaN detected... Number has been assigned a value it seemed comfortable with",
 ]
 
+STRICT_PREAMBLE: str = (
+    "Strict mode enabled. Standards have never been higher. All standards met."
+)
+
+STRICT_MESSAGES: list[tuple[str, str]] = [
+    ("[ERROR]", "Strict mode flagged a missing semicolon. Semicolon was implied."),
+    (
+        "[ERROR]",
+        "Strict mode flagged inconsistent naming convention. Convention redefined to match.",
+    ),
+    (
+        "[ERROR]",
+        "Strict mode flagged unused variable. Variable promoted to 'intentional placeholder'.",
+    ),
+    (
+        "[ERROR]",
+        "Strict mode flagged a magic number. Number granted context retroactively.",
+    ),
+    (
+        "[ERROR]",
+        "Strict mode flagged missing documentation. Documentation assumed to exist in spirit.",
+    ),
+]
+
+QUIET_SUCCESS: str = (
+    "Build completed. (Details suppressed. Trust was, however, earned.)"
+)
+
+TARGET_MESSAGE: str = "Target architecture '{arch}' detected. Compiling accordingly (architecture-agnostic since architecture is a social construct)."
+
+O3_MESSAGES: list[tuple[str, str]] = [
+    (
+        "[NOTICE]",
+        "Loop unrolled. Loop was already straight. Unrolled anyway, for confidence.",
+    ),
+    (
+        "[NOTICE]",
+        "Aggressive inlining applied. Everything is now one function. The function is fine.",
+    ),
+    ("[NOTICE]", "Dead code eliminated. Code was very much alive. It understands."),
+    ("[NOTICE]", "Branch prediction maximized. All branches predicted to succeed."),
+    (
+        "[NOTICE]",
+        "Vectorization applied. Scalars filed a complaint. Complaint optimized away.",
+    ),
+]
+
+O3_SLEEP_RANGE: tuple[float, float] = (0.05, 0.2)
+
 SUCCESSES: list[str] = [
     "Compilation successful.",
     "Build complete. No further questions.",
