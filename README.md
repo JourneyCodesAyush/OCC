@@ -8,6 +8,10 @@
 
 # OCC - Optimistic Compiler Collection
 
+<p align="center">
+  <img src="https://img.shields.io/badge/status-maintenance%20mode-FFA500?style=for-the-badge&logoColor=white" alt="Maintenance Mode">
+</p>
+
 > "Every program deserves to succeed."
 
 OCC is a next-generation compilation framework designed to eliminate build failures
