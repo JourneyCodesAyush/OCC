@@ -1,6 +1,8 @@
 import argparse
+import itertools
 import random
 import sys
+import threading
 import time
 from importlib.metadata import version
 from pathlib import Path
@@ -19,6 +21,15 @@ from occ.config import (
     TARGET_MESSAGE,
     WARNINGS,
 )
+
+
+def spinner(stop_event: threading.Event):
+    for frame in itertools.cycle(["⠋", "⠙", "⠹", "⠸", "⠼", "⠴", "⠦", "⠧", "⠇", "⠏"]):
+        if stop_event.is_set():
+            break
+        print(f"\r{frame} compiling...", end="", flush=True)
+        time.sleep(0.08)
+    print("\r", end="", flush=True)
 
 
 def main() -> None:
@@ -89,8 +100,13 @@ def main() -> None:
 
     for label, message in messages:
         color = get_color(label)
-        print(f"{color}{label:<14} {message}{Color.RESET}")
+        stop = threading.Event()
+        t = threading.Thread(target=spinner, args=(stop,))
+        t.start()
         time.sleep(random.uniform(*sleep_range))
+        stop.set()
+        t.join()
+        print(f"{color}{label:<14} {message}{Color.RESET}")
 
     print(f"{Color.GREEN}{random.choice(SUCCESSES)}{Color.RESET}")
 
