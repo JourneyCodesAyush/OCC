@@ -1,5 +1,9 @@
 <p align="center">
-  <img src="assets/mascot.png" width="200" alt="OCC Mascot" />
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/mascot-dark.png">
+  <source media="(prefers-color-scheme: light)" srcset="assets/mascot-light.png">
+  <img src="assets/mascot-dark.png" width="200" alt="OCC Mascot" />
+</picture>
 </p>
 
 # OCC - Optimistic Compiler Collection
