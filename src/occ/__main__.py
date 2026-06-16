@@ -10,7 +10,13 @@ from occ.config import (
     EXTENSIONS,
     FILES,
     LABELS,
+    O3_MESSAGES,
+    O3_SLEEP_RANGE,
+    QUIET_SUCCESS,
+    STRICT_MESSAGES,
+    STRICT_PREAMBLE,
     SUCCESSES,
+    TARGET_MESSAGE,
     WARNINGS,
 )
 
@@ -59,6 +65,9 @@ def main() -> None:
             messages.insert(
                 warning_index, (random.choice(LABELS), random.choice(WARNINGS))
             )
+
+    if args.target:
+        messages.insert(0, ("[NOTICE]", TARGET_MESSAGE.format(arch=args.target)))
 
     for label, message in messages:
         color = get_color(label)
