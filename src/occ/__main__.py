@@ -69,6 +69,12 @@ def main() -> None:
     if args.target:
         messages.insert(0, ("[NOTICE]", TARGET_MESSAGE.format(arch=args.target)))
 
+    if args.strict:
+        print(f"{Color.CYAN}{STRICT_PREAMBLE}{Color.RESET}")
+        for _ in range(random.randint(2, len(STRICT_MESSAGES))):
+            idx = random.randint(0, len(messages))
+            messages.insert(idx, random.choice(STRICT_MESSAGES))
+
     for label, message in messages:
         color = get_color(label)
         print(f"{color}{label:<14} {message}{Color.RESET}")
