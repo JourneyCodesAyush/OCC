@@ -74,11 +74,17 @@ def main() -> None:
         for _ in range(random.randint(2, len(STRICT_MESSAGES))):
             idx = random.randint(0, len(messages))
             messages.insert(idx, random.choice(STRICT_MESSAGES))
+    sleep_range = O3_SLEEP_RANGE if args.O3 else (0.1, 0.6)
+
+    if args.O3:
+        for _ in range(random.randint(2, 3)):
+            idx = random.randint(0, len(messages))
+            messages.insert(idx, random.choice(O3_MESSAGES))
 
     for label, message in messages:
         color = get_color(label)
         print(f"{color}{label:<14} {message}{Color.RESET}")
-        time.sleep(random.uniform(0.1, 0.6))
+        time.sleep(random.uniform(*sleep_range))
 
     print(f"{Color.GREEN}{random.choice(SUCCESSES)}{Color.RESET}")
 
